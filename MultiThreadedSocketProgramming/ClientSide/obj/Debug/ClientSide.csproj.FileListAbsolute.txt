@@ -11,3 +11,5 @@ C:\Users\Erdemm\Desktop\GithubRepo\SocketProgramming\MultiThreadedSocketProgramm
 C:\Users\Erdemm\Desktop\GithubRepo\SocketProgramming\MultiThreadedSocketProgramming\ClientSide\obj\Debug\ClientSide.csproj.CopyComplete
 C:\Users\Erdemm\Desktop\GithubRepo\SocketProgramming\MultiThreadedSocketProgramming\ClientSide\obj\Debug\ClientSide.exe
 C:\Users\Erdemm\Desktop\GithubRepo\SocketProgramming\MultiThreadedSocketProgramming\ClientSide\obj\Debug\ClientSide.pdb
+C:\Users\Erdemm\Desktop\GithubRepo\SocketProgramming\MultiThreadedSocketProgramming\ClientSide\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Erdemm\Desktop\GithubRepo\SocketProgramming\MultiThreadedSocketProgramming\ClientSide\bin\Debug\Newtonsoft.Json.xml

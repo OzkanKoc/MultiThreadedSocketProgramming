@@ -5,3 +5,4 @@ C:\Users\Erdemm\Desktop\GithubRepo\SocketProgramming\MultiThreadedSocketProgramm
 C:\Users\Erdemm\Desktop\GithubRepo\SocketProgramming\MultiThreadedSocketProgramming\TCPConnectivity\bin\Debug\TCPConnectivity.pdb
 C:\Users\Erdemm\Desktop\GithubRepo\SocketProgramming\MultiThreadedSocketProgramming\TCPConnectivity\obj\Debug\TCPConnectivity.exe
 C:\Users\Erdemm\Desktop\GithubRepo\SocketProgramming\MultiThreadedSocketProgramming\TCPConnectivity\obj\Debug\TCPConnectivity.pdb
+C:\Users\Erdemm\Desktop\GithubRepo\SocketProgramming\MultiThreadedSocketProgramming\TCPConnectivity\obj\Debug\TCPConnectivity.csprojAssemblyReference.cache

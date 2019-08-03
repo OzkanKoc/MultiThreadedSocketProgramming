@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -14,12 +15,14 @@ namespace ServerSide
 {
     public partial class B : Form
     {
+        private static List<object> _list;
         private static Server _server;
         public B()
         {
             InitializeComponent();
+            CheckForIllegalCrossThreadCalls = false;
+            _list = new List<object>();
             _server = new Server("127.0.1", 42422);
-            _server.Accept += Server_Accept;
             _server.Receive += Server_Receive;
         }
 
@@ -27,17 +30,20 @@ namespace ServerSide
         {
             TransferArgs args = e as TransferArgs;
             string data = Encoding.ASCII.GetString(args.Get());
-        }
-
-        private void Server_Accept(object sender, SocketArgs e)
-        {
-            byte[] bytes = Encoding.ASCII.GetBytes("basladi");
-
-            System.Threading.Thread.Sleep(1000);
-
-            _server.BeginSend(e.Connection, bytes);
-            _server.BeginSend(e.Connection, bytes);
-            _server.BeginSend(e.Connection, bytes);
+            dynamic message = Newtonsoft.Json.JsonConvert.DeserializeObject(data);
+            _list.Add(new
+            {
+                Veri1 = message.StringData,
+                Veri2 = message.IntData,
+                Veri3 = message.FloatData,
+                ReceiveDate = DateTime.Now.ToString(),
+                Id = _server.ConnectionIPs[((IPEndPoint)args.Connection.LocalEndPoint).Address.ToString()]
+            });
+            lock (this)
+            {
+                grdB.DataSource = null;
+                grdB.DataSource = _list;
+            }
         }
     }
 }

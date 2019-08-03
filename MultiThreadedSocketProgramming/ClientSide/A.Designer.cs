@@ -34,13 +34,11 @@
             // 
             // grdA
             // 
-            this.grdA.AllowUserToDeleteRows = false;
             this.grdA.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.grdA.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.grdA.Dock = System.Windows.Forms.DockStyle.Fill;
             this.grdA.Location = new System.Drawing.Point(0, 0);
             this.grdA.Name = "grdA";
-            this.grdA.ReadOnly = true;
             this.grdA.Size = new System.Drawing.Size(800, 450);
             this.grdA.TabIndex = 0;
             // 

@@ -20,11 +20,6 @@ namespace TCPConnectivity
             IPEndPoint = new IPEndPoint(IPAddress.Parse(host), port);
             Connection = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
             Connection.BeginConnect(IPEndPoint, ConnectCallback, Connection);
-
-            _rcvBuffer = new byte[1024];
-
-            var buffer = new byte[bufferSize];
-            Connection.BeginReceive(buffer, 0, bufferSize, SocketFlags.None, ReceiveCallback, Connection);
         }
 
         public int GeneralBufferSize { get; set; }
@@ -33,7 +28,7 @@ namespace TCPConnectivity
 
         public event ConnectionEventHandler Connect;
         public event ConnectionEventHandler Send;
-        public event ConnectionEventHandler Receive;
+        //public event ConnectionEventHandler Receive;
         public event ConnectionEventHandler Disconnect;
 
 
@@ -45,16 +40,16 @@ namespace TCPConnectivity
             Connect?.Invoke(this, args);
         }
 
-        private void ReceiveCallback(IAsyncResult ar)
-        {
-            int receiveBytes = Connection.EndReceive(ar);
-            if (receiveBytes > 0)
-            {
-                Connection.BeginReceive(_rcvBuffer, 0, GeneralBufferSize, SocketFlags.None, ReceiveCallback, Connection);
-                TransferArgs args = new TransferArgs(Connection, _rcvBuffer, receiveBytes);
-                Receive?.Invoke(this, args);
-            }
-        }
+        //private void ReceiveCallback(IAsyncResult ar)
+        //{
+        //    int receiveBytes = Connection.EndReceive(ar);
+        //    if (receiveBytes > 0)
+        //    {
+        //        Connection.BeginReceive(_rcvBuffer, 0, GeneralBufferSize, SocketFlags.None, ReceiveCallback, Connection);
+        //        TransferArgs args = new TransferArgs(Connection, _rcvBuffer, receiveBytes);
+        //        Receive?.Invoke(this, args);
+        //    }
+        //}
 
         public void BeginSend(byte[] buffer, SocketFlags flags = SocketFlags.None)
         {
