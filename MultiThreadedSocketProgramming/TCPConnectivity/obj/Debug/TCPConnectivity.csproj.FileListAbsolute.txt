@@ -1,8 +1,0 @@
-C:\Users\Erdemm\Desktop\GithubRepo\SocketProgramming\MultiThreadedSocketProgramming\TCPConnectivity\obj\Debug\TCPConnectivity.Properties.Resources.resources
-C:\Users\Erdemm\Desktop\GithubRepo\SocketProgramming\MultiThreadedSocketProgramming\TCPConnectivity\obj\Debug\TCPConnectivity.csproj.GenerateResource.cache
-C:\Users\Erdemm\Desktop\GithubRepo\SocketProgramming\MultiThreadedSocketProgramming\TCPConnectivity\obj\Debug\TCPConnectivity.csproj.CoreCompileInputs.cache
-C:\Users\Erdemm\Desktop\GithubRepo\SocketProgramming\MultiThreadedSocketProgramming\TCPConnectivity\bin\Debug\TCPConnectivity.exe
-C:\Users\Erdemm\Desktop\GithubRepo\SocketProgramming\MultiThreadedSocketProgramming\TCPConnectivity\bin\Debug\TCPConnectivity.pdb
-C:\Users\Erdemm\Desktop\GithubRepo\SocketProgramming\MultiThreadedSocketProgramming\TCPConnectivity\obj\Debug\TCPConnectivity.exe
-C:\Users\Erdemm\Desktop\GithubRepo\SocketProgramming\MultiThreadedSocketProgramming\TCPConnectivity\obj\Debug\TCPConnectivity.pdb
-C:\Users\Erdemm\Desktop\GithubRepo\SocketProgramming\MultiThreadedSocketProgramming\TCPConnectivity\obj\Debug\TCPConnectivity.csprojAssemblyReference.cache
