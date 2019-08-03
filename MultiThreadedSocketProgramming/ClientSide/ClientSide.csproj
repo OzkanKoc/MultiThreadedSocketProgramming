@@ -52,6 +52,7 @@
     <Compile Include="A.Designer.cs">
       <DependentUpon>A.cs</DependentUpon>
     </Compile>
+    <Compile Include="Entity\Message.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="A.resx">
@@ -78,6 +79,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\TCPConnectivity\TCPConnectivity.csproj">
+      <Project>{2EA6EF89-B722-4C5B-B1B3-89C9F4628D1E}</Project>
+      <Name>TCPConnectivity</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

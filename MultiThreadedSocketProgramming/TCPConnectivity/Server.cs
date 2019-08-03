@@ -48,7 +48,7 @@ namespace TCPConnectivity
                 Connection.BeginAccept(AcceptCallback, null);
                 SocketArgs args = new SocketArgs(accepted);
                 Accept?.Invoke(this, args);
-                accepted.BeginReceive(_rcvBuffer, 0, GeneralBufferSize, SocketFlags.None, (ReceiveCallback), accepted);
+                accepted.BeginReceive(_rcvBuffer, 0, GeneralBufferSize, SocketFlags.None, ReceiveCallback, accepted);
             }
             catch
             {
@@ -58,7 +58,7 @@ namespace TCPConnectivity
 
         private void ReceiveCallback(IAsyncResult ar)
         {
-            Socket sock = (Socket)ar.AsyncState;
+            Socket sock = ar.AsyncState as Socket;
 
             int receivedBytes = 0;
             try
@@ -77,7 +77,7 @@ namespace TCPConnectivity
             sock.BeginReceive(_rcvBuffer, 0, GeneralBufferSize, SocketFlags.None, (ReceiveCallback), sock);
         }
 
-        private void BeginSend(Socket sock, byte[] buffer, SocketFlags flags = SocketFlags.None)
+        public void BeginSend(Socket sock, byte[] buffer, SocketFlags flags = SocketFlags.None)
         {
             _sndBuffer = buffer;
             sock.BeginSend(buffer, 0, buffer.Length, flags, new AsyncCallback(SendCallback), sock);
@@ -85,7 +85,7 @@ namespace TCPConnectivity
 
         private void SendCallback(IAsyncResult ar)
         {
-            Socket sock = (Socket)ar.AsyncState;
+            Socket sock = ar.AsyncState as Socket;
             sock.EndSend(ar);
 
             TransferArgs args = new TransferArgs(sock, _sndBuffer, _sndBuffer.Length);

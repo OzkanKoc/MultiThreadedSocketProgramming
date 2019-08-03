@@ -79,5 +79,11 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\TCPConnectivity\TCPConnectivity.csproj">
+      <Project>{2EA6EF89-B722-4C5B-B1B3-89C9F4628D1E}</Project>
+      <Name>TCPConnectivity</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
